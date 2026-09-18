@@ -17,7 +17,7 @@ st.markdown("""
 
 @st.cache_resource
 def load_model():
-    df = pd.read_csv('churn_data.csv')
+    df = pd.read_csv('predictive_churn_engine/churn_data.csv')
     df['TotalCharges'] = pd.to_numeric(df['TotalCharges'], errors='coerce')
     df = df.dropna(subset=['TotalCharges'])
     df['Churn'] = df['Churn'].map({'Yes': 1, 'No': 0})
